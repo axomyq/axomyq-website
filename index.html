@@ -20,11 +20,19 @@
     padding: 40px 20px;
   }
 
-  .logo {
+  .logo-wrap {
     width: 120px;
     height: 120px;
+    margin: 0 auto 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-wrap img {
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    margin-bottom: 32px;
     border-radius: 16px;
   }
 
@@ -40,36 +48,36 @@
   .brand span { color: #b03a0a; }
 
   .tagline {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #1a6b5c;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   .divider {
-    width: 60px;
+    width: 50px;
     height: 2px;
     background: #b03a0a;
-    margin: 0 auto 40px;
+    margin: 0 auto 36px;
   }
 
   .launching {
     font-family: 'Syne', sans-serif;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
     color: #1a1a1a;
     margin-bottom: 16px;
   }
 
   .description {
-    font-size: 16px;
+    font-size: 15px;
     color: #6b6259;
     font-weight: 300;
     line-height: 1.7;
-    max-width: 420px;
-    margin: 0 auto 40px;
+    max-width: 400px;
+    margin: 0 auto 32px;
   }
 
   .badge {
@@ -82,7 +90,7 @@
     padding: 10px 20px;
     font-size: 13px;
     color: #6b6259;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
 
   .dot {
@@ -90,6 +98,7 @@
     height: 8px;
     border-radius: 50%;
     background: #1a6b5c;
+    flex-shrink: 0;
     animation: pulse 2s infinite;
   }
 
@@ -101,7 +110,7 @@
   .contact {
     font-size: 14px;
     color: #6b6259;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-weight: 300;
   }
 
@@ -112,16 +121,19 @@
   }
 
   .footer {
-    margin-top: 48px;
+    margin-top: 44px;
     font-size: 12px;
     color: #c8bfaa;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
   }
 </style>
 </head>
 <body>
 
-  <img src="logo.jpeg" alt="Axomyq Logo" class="logo">
+  <div class="logo-wrap">
+    <img src="logo.jpeg" alt="Axomyq Logo"
+         onerror="this.style.display='none'">
+  </div>
 
   <div class="brand">Axom<span>yq</span></div>
   <div class="tagline">Intelligence from the East</div>
@@ -137,14 +149,14 @@
 
   <div class="badge">
     <span class="dot"></span>
-    Contractor Invoice & Quotation App — Coming Soon
+    Contractor Invoice &amp; Quotation App — Coming Soon
   </div>
 
   <p class="contact">For enquiries: <a href="mailto:hello@axomyq.in">hello@axomyq.in</a></p>
   <p class="contact">WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">+91 XXXXX XXXXX</a></p>
 
   <div class="footer">
-    © 2026 AXOMYQ LLP · Duliajan, Assam · Startup India Registration in Progress
+    © 2026 AXOMYQ LLP · Duliajan, Assam
   </div>
 
 </body>
