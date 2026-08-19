@@ -3,161 +3,665 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Axomyq — Coming Soon</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Axomyq — Websites &amp; AI Media · Duliajan, Assam</title>
+<meta name="description" content="Axomyq LLP is a small software and AI-media studio in Duliajan, Assam, building websites and business tools for firms across North East India.">
+<meta name="theme-color" content="#F8F5F0">
+
+<meta property="og:title" content="Axomyq — Intelligence from the East">
+<meta property="og:description" content="Websites, business tools and AI-created content for businesses across North East India. Built in Duliajan, Assam.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.axomyq.in/">
+<meta property="og:image" content="https://www.axomyq.in/logo.jpeg">
+
+<link rel="icon" href="logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
+/* ---------- tokens ---------- */
+:root{
+  --rice:#F8F5F0;
+  --rice-deep:#F0EAE0;
+  --ink:#14100D;
+  --sindoor:#B03A0A;
+  --pator:#1A6B5C;
+  --muga:#C9A227;
+  --clay:#6B6259;
+  --line:#E0D8CE;
+  --mist:#EDF1EC;        /* pale teal-cream, launch band ground */
 
-  body {
-    min-height: 100vh;
-    background: #f8f5f0;
-    font-family: 'DM Sans', sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
+  --display:'Syne',sans-serif;
+  --body:'DM Sans',sans-serif;
+  --mono:'DM Mono',ui-monospace,monospace;
 
-  .logo-wrap {
-    width: 200px;
-    height: 200px;
-    margin: 0 auto 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  --pad:clamp(20px,5vw,64px);
+  --band:clamp(72px,10vw,128px);
+  --max:1180px;
+}
 
-  .logo-wrap img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    border-radius: 20px;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 
-  .brand {
-    font-family: 'Syne', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: #1a1a1a;
-    letter-spacing: -2px;
-    margin-bottom: 4px;
-  }
+body{
+  background:var(--rice);
+  color:var(--ink);
+  font-family:var(--body);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
 
-  .brand span { color: #b03a0a; }
+a{color:inherit}
+img{display:block}
 
-  .tagline {
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #1a6b5c;
-    margin-bottom: 36px;
-  }
+:focus-visible{outline:2px solid var(--sindoor);outline-offset:3px;border-radius:2px}
 
-  .divider {
-    width: 50px;
-    height: 2px;
-    background: #b03a0a;
-    margin: 0 auto 36px;
-  }
+.shell{width:100%;max-width:var(--max);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
 
-  .launching {
-    font-family: 'Syne', sans-serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 16px;
-  }
+.skip{position:absolute;left:-9999px;top:0;z-index:99;background:var(--ink);color:var(--rice);padding:12px 18px;font-size:13px}
+.skip:focus{left:8px;top:8px}
 
-  .description {
-    font-size: 15px;
-    color: #6b6259;
-    font-weight: 300;
-    line-height: 1.7;
-    max-width: 400px;
-    margin: 0 auto 32px;
-  }
+/* ---------- shared type ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  letter-spacing:.22em;text-transform:uppercase;color:var(--pator);
+  display:block;margin-bottom:22px;
+}
+.eyebrow.on-dark{color:var(--muga)}
 
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #fff;
-    border: 1px solid #e0d8ce;
-    border-radius: 40px;
-    padding: 10px 20px;
-    font-size: 13px;
-    color: #6b6259;
-    margin-bottom: 36px;
-  }
+.h2{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(30px,4.6vw,50px);
+  line-height:1.06;letter-spacing:-.03em;max-width:16ch;
+}
+.h3{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.25;letter-spacing:-.02em}
+.lede{font-size:clamp(16px,1.7vw,19px);color:var(--clay);line-height:1.65;max-width:52ch;margin-top:22px}
+.dark .lede{color:rgba(248,245,240,.68)}
 
-  .dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #1a6b5c;
-    flex-shrink: 0;
-    animation: pulse 2s infinite;
-  }
+/* ---------- weave rule (gamosa motif) ---------- */
+.weave{
+  height:8px;background-repeat:repeat-x;background-size:18px 8px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='8' viewBox='0 0 18 8'%3E%3Cpath d='M9 0l4 4-4 4-4-4z' fill='%23B03A0A'/%3E%3Cpath d='M0 4h2M16 4h2' stroke='%231A6B5C' stroke-width='1'/%3E%3C/svg%3E");
+  opacity:.5;
+}
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
-  }
+/* ---------- header ---------- */
+.site-head{
+  position:sticky;top:0;z-index:40;
+  background:rgba(248,245,240,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
+.mark{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.05em;text-decoration:none}
+.mark i{color:var(--sindoor);font-style:normal}
 
-  .contact {
-    font-size: 14px;
-    color: #6b6259;
-    margin-bottom: 6px;
-    font-weight: 300;
-  }
+.nav{display:flex;gap:30px}
+.nav a{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  text-decoration:none;color:var(--clay);padding:4px 0;border-bottom:1px solid transparent;transition:.2s;
+}
+.nav a:hover{color:var(--ink);border-bottom-color:var(--sindoor)}
 
-  .contact a {
-    color: #b03a0a;
-    text-decoration: none;
-    font-weight: 500;
-  }
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;padding:11px 20px;border-radius:2px;transition:.2s;white-space:nowrap;
+}
+.btn-solid{background:var(--ink);color:var(--rice)}
+.btn-solid:hover{background:var(--sindoor)}
+.btn-line{border:1px solid var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink)}
+.btn-gold{background:var(--muga);color:var(--ink)}
+.btn-gold:hover{background:#DDB63A}
+.btn-ghost{border:1px solid rgba(248,245,240,.28);color:var(--rice)}
+.btn-ghost:hover{border-color:var(--rice)}
 
-  .footer {
-    margin-top: 44px;
-    font-size: 12px;
-    color: #c8bfaa;
-    letter-spacing: 0.3px;
-  }
+/* ---------- launch band ---------- */
+.launch-band{
+  background:linear-gradient(180deg,#FFFDF9 0%,var(--mist) 100%);
+  overflow:hidden;position:relative;
+}
+.launch-band::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(135deg,rgba(26,107,92,.055) 0 1px,transparent 1px 9px);
+}
+.band-rows{position:relative;z-index:1}
+
+.ticker{border-bottom:1px solid rgba(20,16,13,.1);overflow:hidden}
+.track-sm{display:flex;width:max-content;padding:10px 0;animation:slide 46s linear infinite;animation-direction:reverse;will-change:transform}
+.run-sm{display:flex;align-items:center;gap:30px;padding-right:30px}
+.run-sm b{
+  font-family:var(--mono);font-weight:400;font-size:10.5px;
+  letter-spacing:.24em;text-transform:uppercase;color:var(--clay);white-space:nowrap;
+}
+.run-sm i{font-style:normal;color:var(--sindoor);font-size:8px;line-height:1}
+
+.marq{overflow:hidden}
+.track{display:flex;width:max-content;padding:clamp(15px,2vw,26px) 0;animation:slide 30s linear infinite;will-change:transform}
+.track.rev{animation-direction:reverse}
+.launch-band:hover .track,.launch-band:hover .track-sm{animation-play-state:paused}
+
+@keyframes slide{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+.run{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);padding-right:clamp(16px,2.2vw,30px)}
+.run span{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(21px,3.4vw,42px);
+  line-height:1;letter-spacing:-.025em;text-transform:uppercase;
+  color:var(--ink);white-space:nowrap;
+}
+.run span.hollow{color:transparent;-webkit-text-stroke:1px rgba(26,107,92,.55)}
+.run em{font-style:normal;color:var(--sindoor);font-size:clamp(11px,1.4vw,17px);line-height:1}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:clamp(56px,9vw,110px) 0 clamp(56px,8vw,96px);overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(90deg,transparent 0 27px,rgba(26,107,92,.09) 27px 28px);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 78%);
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 78%);
+}
+.hero-in{position:relative;z-index:1}
+
+.logo-wrap{width:clamp(84px,12vw,112px);margin-bottom:34px}
+.logo-wrap img{width:100%;height:auto;border-radius:14px}
+.logo-fallback{
+  width:100%;aspect-ratio:1;border-radius:14px;
+  background:var(--ink);color:var(--rice);
+  display:none;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(38px,5.4vw,52px);letter-spacing:-.05em;
+  box-shadow:inset 0 0 0 1px rgba(201,162,39,.5);
+}
+.logo-fallback i{color:var(--sindoor);font-style:normal}
+
+.wordmark{font-family:var(--display);font-weight:800;font-size:clamp(54px,11.5vw,132px);line-height:.88;letter-spacing:-.055em}
+.wordmark i{color:var(--sindoor);font-style:normal}
+
+.tagline{font-family:var(--mono);font-size:clamp(11px,1.4vw,13px);letter-spacing:.3em;text-transform:uppercase;color:var(--pator);margin-top:20px}
+
+.hero-lede{font-size:clamp(18px,2.3vw,26px);line-height:1.5;font-weight:300;max-width:23ch;margin-top:34px}
+.hero-lede b{font-weight:500;color:var(--sindoor)}
+
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:10px 30px;margin-top:46px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);
+}
+.hero-meta i{font-style:normal;color:var(--muga)}
+
+/* ---------- section frame ---------- */
+.band{padding:var(--band) 0}
+.band.tint{background:var(--rice-deep)}
+.band.dark{background:var(--ink);color:var(--rice)}
+.band.dark .h2{color:var(--rice)}
+.band-head{max-width:640px;margin-bottom:clamp(40px,5vw,62px)}
+
+/* ---------- pillars ---------- */
+.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.pillar{background:var(--rice);padding:clamp(28px,3.6vw,46px)}
+.band.tint .pillar{background:var(--rice-deep)}
+.pillar .num{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--sindoor);display:block;margin-bottom:18px}
+.pillar h3{font-family:var(--display);font-weight:800;font-size:clamp(22px,2.8vw,30px);letter-spacing:-.025em;line-height:1.1}
+.pillar p{color:var(--clay);margin-top:16px;font-size:15.5px}
+.pillar .note{
+  margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
+  font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--pator);line-height:1.6;
+}
+
+/* ---------- services ---------- */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.cell{background:var(--rice);padding:clamp(26px,3vw,38px);transition:background .25s}
+.cell:hover{background:#fff}
+.band.tint .cell{background:var(--rice-deep)}
+.band.tint .cell:hover{background:var(--rice)}
+.cell .tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--pator);display:block;margin-bottom:16px}
+.cell p{color:var(--clay);font-size:15px;margin-top:12px}
+
+/* ---------- why (dark) ---------- */
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(28px,4vw,56px)}
+.why h3{color:var(--muga);font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em}
+.why p{color:rgba(248,245,240,.66);font-size:15px;margin-top:14px}
+.why .bar{width:34px;height:2px;background:var(--sindoor);margin-bottom:20px}
+
+/* ---------- process ---------- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line)}
+.step{background:var(--rice);padding:clamp(24px,2.8vw,34px)}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--sindoor);display:block;margin-bottom:26px;letter-spacing:.1em}
+.step p{color:var(--clay);font-size:14.5px;margin-top:12px}
+
+/* ---------- pipeline ---------- */
+.pipe{
+  border:1px solid var(--line);padding:clamp(32px,5vw,64px);background:var(--rice);
+  display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,4vw,56px);align-items:center;
+}
+.status{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);
+  border:1px solid var(--line);border-radius:40px;padding:9px 18px;background:#fff;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--pator);animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* ---------- contact ---------- */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:end}
+.chan{display:block;text-decoration:none;padding:22px 0;border-top:1px solid rgba(248,245,240,.16)}
+.chan:last-child{border-bottom:1px solid rgba(248,245,240,.16)}
+.chan .k{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muga);display:block;margin-bottom:9px}
+.chan .v{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.2vw,25px);letter-spacing:-.02em;color:var(--rice);transition:color .2s;display:inline-block}
+.chan:hover .v{color:var(--muga)}
+
+/* ---------- footer ---------- */
+.site-foot{background:var(--rice);padding:clamp(40px,5vw,58px) 0 34px}
+.foot-in{display:flex;flex-wrap:wrap;gap:22px 40px;justify-content:space-between;align-items:flex-start}
+.foot-tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--pator);margin-top:10px}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 26px}
+.foot-links a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--clay);text-decoration:none}
+.foot-links a:hover{color:var(--sindoor)}
+.legal{
+  margin-top:34px;padding-top:22px;border-top:1px solid var(--line);
+  font-size:12px;color:#B3A897;display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:space-between;
+}
+
+/* ---------- reveal ---------- */
+[data-reveal]{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+[data-reveal].in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:900px){
+  .nav{display:none}
+  .grid-3,.why,.steps{grid-template-columns:1fr 1fr}
+  .pipe,.contact{grid-template-columns:1fr;align-items:start}
+  .hero-lede{max-width:100%}
+}
+@media (max-width:600px){
+  .pillars,.grid-3,.why,.steps{grid-template-columns:1fr}
+  .head-in{height:60px}
+  .btn{padding:10px 15px;font-size:11px}
+  .track{animation-duration:20s}
+  .track-sm{animation-duration:32s}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .track,.track-sm{animation:none}
+  .dot{animation:none}
+  [data-reveal]{opacity:1;transform:none;transition:none}
+}
 </style>
 </head>
 <body>
 
-  <div class="logo-wrap">
-    <img src="logo.jpeg" alt="Axomyq Logo"
-         onerror="this.style.display='none'">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-head">
+  <div class="shell head-in">
+    <a href="#top" class="mark">Axom<i>yq</i></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#work">What we do</a>
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-solid" href="https://wa.me/918638521509">Talk to us</a>
   </div>
+</header>
 
-  <div class="brand">Axom<span>yq</span></div>
-  <div class="tagline">Intelligence from the East</div>
+<!-- ============ LAUNCH BAND ============ -->
+<section class="launch-band" aria-label="Launch status">
+  <div class="weave"></div>
+  <div class="band-rows">
 
-  <div class="divider"></div>
+    <div class="ticker">
+      <div class="track-sm">
+        <div class="run-sm">
+          <b>Axomyq LLP</b><i>◆</i>
+          <b>Duliajan, Assam</b><i>◆</i>
+          <b>Websites &amp; business tools</b><i>◆</i>
+          <b>AI-created content</b><i>◆</i>
+          <b>Enquiries open now</b><i>◆</i>
+          <b>Assamese · Hindi · English</b><i>◆</i>
+        </div>
+        <div class="run-sm" aria-hidden="true">
+          <b>Axomyq LLP</b><i>◆</i>
+          <b>Duliajan, Assam</b><i>◆</i>
+          <b>Websites &amp; business tools</b><i>◆</i>
+          <b>AI-created content</b><i>◆</i>
+          <b>Enquiries open now</b><i>◆</i>
+          <b>Assamese · Hindi · English</b><i>◆</i>
+        </div>
+      </div>
+    </div>
 
-  <div class="launching">We are Launching Soon</div>
-  <p class="description">
-    Technology and media solutions startup from Duliajan, Assam —
-    building SaaS apps and AI-powered media services for
-    businesses across North East India.
-  </p>
+    <div class="marq">
+      <div class="track">
+        <div class="run">
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+        </div>
+        <div class="run" aria-hidden="true">
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+        </div>
+      </div>
+    </div>
 
-  <div class="badge">
-    <span class="dot"></span>
-    Contractor Invoice &amp; Quotation App — Coming Soon
   </div>
+  <div class="weave"></div>
+</section>
 
-  <p class="contact">For enquiries: <a href="mailto:admin@axomyq.in">admin@axomyq.in</a></p>
-  <p class="contact">WhatsApp: <a href="https://wa.me/918638521509">+91 86385 21509</a></p>
+<main id="main">
 
-  <div class="footer">
-    © 2026 AXOMYQ LLP · Duliajan, Assam
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="shell hero-in">
+    <div class="logo-wrap" data-reveal>
+      <img src="logo.jpeg" alt="Axomyq"
+           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'">
+      <div class="logo-fallback" id="logoFallback" aria-hidden="true">A<i>q</i></div>
+    </div>
+
+    <h1 class="wordmark" data-reveal>Axom<i>yq</i></h1>
+    <p class="tagline" data-reveal>Intelligence from the East</p>
+
+    <p class="hero-lede" data-reveal>
+      A small studio building websites and AI-made content for businesses across
+      <b>North East India</b>.
+    </p>
+
+    <div class="hero-cta" data-reveal>
+      <a class="btn btn-solid" href="#contact">Start a conversation</a>
+      <a class="btn btn-line" href="#work">See what we do</a>
+    </div>
+
+    <div class="hero-meta" data-reveal>
+      <div><i>◆</i> Duliajan, Assam</div>
+      <div><i>◆</i> Websites &amp; AI media</div>
+      <div><i>◆</i> Est. 2026</div>
+    </div>
   </div>
+</section>
+
+<!-- ============ TWO PILLARS ============ -->
+<section class="band tint" id="work">
+  <div class="shell">
+    <div class="band-head" data-reveal>
+      <span class="eyebrow">What we do</span>
+      <h2 class="h2">Two threads, one studio.</h2>
+      <p class="lede">
+        We build the website a business is found on, and we make the content that fills it.
+        Most clients come to us for one and stay for both.
+      </p>
+    </div>
+
+    <div class="pillars" data-reveal>
+      <article class="pillar">
+        <span class="num">01 — Web</span>
+        <h3>Websites and browser-based tools</h3>
+        <p>
+          Business websites and simple web tools for firms still working off paper,
+          ledgers and WhatsApp. Everything is built to open in a browser on any
+          phone, so there is nothing for your customers to install.
+        </p>
+        <p class="note">Mobile apps are planned for a later stage — we are not taking that work yet.</p>
+      </article>
+      <article class="pillar">
+        <span class="num">02 — AI media</span>
+        <h3>Content created with AI, finished by hand</h3>
+        <p>
+          Copy, images and graphics produced using AI tools and then edited to brief.
+          It costs a fraction of a traditional shoot and turns around in days,
+          which is the point.
+        </p>
+        <p class="note">We do not run photo or video shoots — everything we make is created digitally.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="band" id="services">
+  <div class="shell">
+    <div class="band-head" data-reveal>
+      <span class="eyebrow">Services</span>
+      <h2 class="h2">What you can hire us for.</h2>
+    </div>
+
+    <div class="grid-3" data-reveal>
+      <article class="cell">
+        <span class="tag">Web</span>
+        <h3 class="h3">Business websites</h3>
+        <p>Company sites, landing pages and catalogues that load quickly and read properly on a phone.</p>
+      </article>
+      <article class="cell">
+        <span class="tag">Web</span>
+        <h3 class="h3">Browser-based tools</h3>
+        <p>Quotes, billing, records and simple reporting, moved off paper into something you open in a browser.</p>
+      </article>
+      <article class="cell">
+        <span class="tag">Setup</span>
+        <h3 class="h3">Domain &amp; email setup</h3>
+        <p>We buy the domain and hosting in your name, set up your business email, and hand you the logins. You own it, not us.</p>
+      </article>
+      <article class="cell">
+        <span class="tag">AI media</span>
+        <h3 class="h3">Written content</h3>
+        <p>Website copy, product descriptions, brochures and social posts in Assamese, Hindi and English.</p>
+      </article>
+      <article class="cell">
+        <span class="tag">AI media</span>
+        <h3 class="h3">Images &amp; graphics</h3>
+        <p>Posters, ads, product visuals and social creatives, generated to your brief and finished for print or screen.</p>
+      </article>
+      <article class="cell">
+        <span class="tag">Design</span>
+        <h3 class="h3">Brand basics</h3>
+        <p>Logo, colours, type and print-ready files for signboards, cards and packaging — one consistent set.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="band dark">
+  <div class="shell">
+    <div class="band-head" data-reveal>
+      <span class="eyebrow on-dark">Why Axomyq</span>
+      <h2 class="h2">Built here, for here.</h2>
+    </div>
+
+    <div class="why" data-reveal>
+      <div>
+        <div class="bar"></div>
+        <h3>You deal with the person doing the work</h3>
+        <p>Axomyq is deliberately small. Whoever scopes your project is the one who builds it, so nothing is lost being handed along — and the overhead you are paying for is close to nothing.</p>
+      </div>
+      <div>
+        <div class="bar"></div>
+        <h3>We are based here, not visiting</h3>
+        <p>Our studio is in Duliajan. We meet clients across Upper Assam in person, and we are reachable on WhatsApp the way businesses here actually work.</p>
+      </div>
+      <div>
+        <div class="bar"></div>
+        <h3>Assamese, Hindi and English</h3>
+        <p>Training, support and content in the language your team speaks and your customers read. For us that is standard, not an extra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPROACH ============ -->
+<section class="band tint" id="approach">
+  <div class="shell">
+    <div class="band-head" data-reveal>
+      <span class="eyebrow">Approach</span>
+      <h2 class="h2">Four steps, in this order.</h2>
+      <p class="lede">No discovery decks and no six-week proposals. The sequence is short so you see something working early.</p>
+    </div>
+
+    <div class="steps" data-reveal>
+      <article class="step">
+        <span class="n">01</span>
+        <h3 class="h3">Listen</h3>
+        <p>We sit with the people doing the work and watch how it is handled today.</p>
+      </article>
+      <article class="step">
+        <span class="n">02</span>
+        <h3 class="h3">Scope</h3>
+        <p>A written plan with a fixed price and dates, agreed before anything is built.</p>
+      </article>
+      <article class="step">
+        <span class="n">03</span>
+        <h3 class="h3">Build</h3>
+        <p>Short cycles, each ending with something you can open and try yourself.</p>
+      </article>
+      <article class="step">
+        <span class="n">04</span>
+        <h3 class="h3">Look after</h3>
+        <p>Training, fixes and changes as the business shifts. We stay reachable.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PIPELINE ============ -->
+<section class="band">
+  <div class="shell">
+    <div class="pipe" data-reveal>
+      <div>
+        <span class="eyebrow">In development</span>
+        <h2 class="h2">Our own products are on the way.</h2>
+      </div>
+      <div>
+        <p class="lede" style="margin-top:0">
+          Alongside client work we are building software of our own for small businesses
+          in the region — the everyday paperwork that is still being done by hand here.
+          Names, pricing and dates will follow when it is ready to be used, not before.
+        </p>
+        <p style="margin-top:26px">
+          <span class="status"><span class="dot"></span> In active development</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="band dark" id="contact">
+  <div class="shell">
+    <div class="contact">
+      <div data-reveal>
+        <span class="eyebrow on-dark">Contact</span>
+        <h2 class="h2">Tell us what you are trying to fix.</h2>
+        <p class="lede">
+          Two lines about your business is enough to start.
+          We reply within one working day.
+        </p>
+        <div class="hero-cta" style="margin-top:32px">
+          <a class="btn btn-gold" href="https://wa.me/918638521509">Message on WhatsApp</a>
+          <a class="btn btn-ghost" href="mailto:admin@axomyq.in">Send an email</a>
+        </div>
+      </div>
+
+      <div data-reveal>
+        <a class="chan" href="mailto:admin@axomyq.in">
+          <span class="k">Email</span>
+          <span class="v">admin@axomyq.in</span>
+        </a>
+        <a class="chan" href="https://wa.me/918638521509">
+          <span class="k">WhatsApp</span>
+          <span class="v">+91 86385 21509</span>
+        </a>
+        <a class="chan" href="https://maps.google.com/?q=Duliajan,Assam">
+          <span class="k">Studio</span>
+          <span class="v">Duliajan, Assam</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LAUNCH BAND (reprise) ============ -->
+<section class="launch-band" aria-hidden="true">
+  <div class="weave"></div>
+  <div class="band-rows">
+    <div class="marq">
+      <div class="track rev">
+        <div class="run">
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+        </div>
+        <div class="run">
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+          <span class="hollow">We are launching soon</span><em>◆</em>
+          <span>We are launching soon</span><em>◆</em>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="weave"></div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot">
+  <div class="shell">
+    <div class="foot-in">
+      <div>
+        <a href="#top" class="mark" style="font-size:26px">Axom<i>yq</i></a>
+        <p class="foot-tag">Intelligence from the East</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#work">What we do</a>
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Refunds</a>
+      </nav>
+    </div>
+    <div class="legal">
+      <span>© 2026 AXOMYQ LLP · Duliajan, Assam, India</span>
+      <span>Websites &amp; AI media</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var items = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  items.forEach(function(el, i){
+    el.style.transitionDelay = (Math.min(i, 4) * 70) + 'ms';
+    io.observe(el);
+  });
+})();
+</script>
 
 </body>
 </html>
