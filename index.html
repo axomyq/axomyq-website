@@ -248,6 +248,43 @@ img{display:block}
 .dot{width:7px;height:7px;border-radius:50%;background:var(--pator);animation:pulse 2.4s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
+/* ---------- products ---------- */
+.products{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(20px,2.4vw,30px);align-items:stretch}
+.prod{
+  border:1px solid var(--line);background:var(--rice);
+  padding:clamp(28px,3.6vw,48px);display:flex;flex-direction:column;
+}
+.prod.live{
+  background:linear-gradient(180deg,#FFFDF9 0%,var(--mist) 100%);
+  border-color:rgba(26,107,92,.32);position:relative;overflow:hidden;
+}
+.prod.live::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:repeating-linear-gradient(135deg,rgba(26,107,92,.05) 0 1px,transparent 1px 9px);
+}
+.prod > *{position:relative;z-index:1}
+.prod .kicker{
+  display:inline-flex;align-items:center;gap:9px;align-self:flex-start;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;
+  border-radius:40px;padding:8px 16px;margin-bottom:24px;
+}
+.kicker.now{background:var(--pator);color:var(--rice)}
+.kicker.now .dot{background:var(--muga)}
+.kicker.next{border:1px solid var(--line);background:#fff;color:var(--clay)}
+.prod h3{font-family:var(--display);font-weight:800;font-size:clamp(25px,3.2vw,36px);letter-spacing:-.03em;line-height:1.05}
+.prod .sub{
+  font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+  color:var(--sindoor);margin-top:12px;
+}
+.prod p{color:var(--clay);font-size:15.5px;margin-top:18px}
+.prod .prod-cta{margin-top:auto;padding-top:30px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.offer{
+  margin-top:22px;padding:14px 18px;border-left:2px solid var(--muga);
+  background:rgba(201,162,39,.1);font-size:14.5px;color:var(--ink);line-height:1.55;
+}
+.offer b{font-weight:500;color:var(--sindoor)}
+@media (max-width:900px){ .products{grid-template-columns:1fr} }
+
 /* ---------- contact ---------- */
 .contact{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);align-items:end}
 .chan{display:block;text-decoration:none;padding:22px 0;border-top:1px solid rgba(248,245,240,.16)}
@@ -306,6 +343,7 @@ img{display:block}
     <nav class="nav" aria-label="Primary">
       <a href="#work">What we do</a>
       <a href="#services">Services</a>
+      <a href="#products">Products</a>
       <a href="#approach">Approach</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -325,7 +363,7 @@ img{display:block}
           <b>Duliajan, Assam</b><i>◆</i>
           <b>Websites &amp; business tools</b><i>◆</i>
           <b>AI-created content</b><i>◆</i>
-          <b>Enquiries open now</b><i>◆</i>
+          <b>BillBook is live</b><i>◆</i>
           <b>Assamese · Hindi · English</b><i>◆</i>
         </div>
         <div class="run-sm" aria-hidden="true">
@@ -333,7 +371,7 @@ img{display:block}
           <b>Duliajan, Assam</b><i>◆</i>
           <b>Websites &amp; business tools</b><i>◆</i>
           <b>AI-created content</b><i>◆</i>
-          <b>Enquiries open now</b><i>◆</i>
+          <b>BillBook is live</b><i>◆</i>
           <b>Assamese · Hindi · English</b><i>◆</i>
         </div>
       </div>
@@ -534,24 +572,53 @@ img{display:block}
   </div>
 </section>
 
-<!-- ============ PIPELINE ============ -->
-<section class="band">
+<!-- ============ PRODUCTS ============ -->
+<section class="band" id="products">
   <div class="shell">
-    <div class="pipe" data-reveal>
-      <div>
-        <span class="eyebrow">In development</span>
-        <h2 class="h2">Our own products are on the way.</h2>
-      </div>
-      <div>
-        <p class="lede" style="margin-top:0">
-          Alongside client work we are building software of our own for small businesses
-          in the region — the everyday paperwork that is still being done by hand here.
-          Names, pricing and dates will follow when it is ready to be used, not before.
+    <div class="band-head" data-reveal>
+      <span class="eyebrow">Our products</span>
+      <h2 class="h2">Software of our own, built here.</h2>
+      <p class="lede">
+        Alongside client work we build our own tools for the everyday paperwork
+        that is still being done by hand across the region.
+      </p>
+    </div>
+
+    <div class="products" data-reveal>
+
+      <article class="prod live">
+        <span class="kicker now"><span class="dot"></span> Live now</span>
+        <h3>Axomyq BillBook</h3>
+        <p class="sub">Quotation &amp; GST Invoice Maker</p>
+        <p>
+          Make quotations, convert them to GST invoices in one click, and keep your
+          payment records in one place. Runs in any browser — nothing to install,
+          and your books stay with you.
         </p>
-        <p style="margin-top:26px">
-          <span class="status"><span class="dot"></span> In active development</span>
+        <div class="offer">
+          <b>Free access until 30 September 2026.</b>
+          Ask us and we will set up your account at no cost.
+        </div>
+        <div class="prod-cta">
+          <a class="btn btn-solid" href="https://app.axomyq.in" target="_blank" rel="noopener noreferrer">Open BillBook ↗</a>
+          <a class="btn btn-line" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Ask for free access</a>
+        </div>
+      </article>
+
+      <article class="prod">
+        <span class="kicker next"><span class="dot"></span> Coming soon</span>
+        <h3>ContractZen</h3>
+        <p class="sub">Contractor Business, Labour Compliance &amp; Billing Management</p>
+        <p>
+          One system for contractors — labour records, statutory compliance,
+          work orders and billing, kept together instead of spread across
+          registers and spreadsheets.
         </p>
-      </div>
+        <div class="prod-cta">
+          <a class="btn btn-line" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Join the early list</a>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -628,6 +695,7 @@ img{display:block}
       <nav class="foot-links" aria-label="Footer">
         <a href="#work">What we do</a>
         <a href="#services">Services</a>
+        <a href="#products">Products</a>
         <a href="#approach">Approach</a>
         <a href="#contact">Contact</a>
         <a href="#">Privacy</a>
