@@ -6,6 +6,9 @@
 <title>Axomyq — Websites &amp; AI Media · Duliajan, Assam</title>
 <meta name="description" content="Axomyq LLP is a small software and AI-media studio in Duliajan, Assam, building websites and business tools for firms across North East India.">
 <meta name="theme-color" content="#F8F5F0">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<script>if (window.top !== window.self) { window.top.location = window.self.location; }</script>
 
 <meta property="og:title" content="Axomyq — Intelligence from the East">
 <meta property="og:description" content="Websites, business tools and AI-created content for businesses across North East India. Built in Duliajan, Assam.">
@@ -95,9 +98,11 @@ img{display:block}
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-.head-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:66px}
-.mark{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.05em;text-decoration:none}
+.head-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:86px}
+.mark{font-family:var(--display);font-weight:800;font-size:21px;letter-spacing:-.05em;text-decoration:none;display:flex;align-items:center}
 .mark i{color:var(--sindoor);font-style:normal}
+.mark img{height:58px;width:auto;border-radius:8px;display:block}
+.mark .txt{display:none}
 
 .nav{display:flex;gap:30px}
 .nav a{
@@ -166,18 +171,6 @@ img{display:block}
   mask-image:linear-gradient(180deg,rgba(0,0,0,.85),transparent 78%);
 }
 .hero-in{position:relative;z-index:1}
-
-.logo-wrap{width:clamp(84px,12vw,112px);margin-bottom:34px}
-.logo-wrap img{width:100%;height:auto;border-radius:14px}
-.logo-fallback{
-  width:100%;aspect-ratio:1;border-radius:14px;
-  background:var(--ink);color:var(--rice);
-  display:none;align-items:center;justify-content:center;
-  font-family:var(--display);font-weight:800;
-  font-size:clamp(38px,5.4vw,52px);letter-spacing:-.05em;
-  box-shadow:inset 0 0 0 1px rgba(201,162,39,.5);
-}
-.logo-fallback i{color:var(--sindoor);font-style:normal}
 
 .wordmark{font-family:var(--display);font-weight:800;font-size:clamp(54px,11.5vw,132px);line-height:.88;letter-spacing:-.055em}
 .wordmark i{color:var(--sindoor);font-style:normal}
@@ -249,7 +242,7 @@ img{display:block}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* ---------- products ---------- */
-.products{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(20px,2.4vw,30px);align-items:stretch}
+.products{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,30px);align-items:stretch}
 .prod{
   border:1px solid var(--line);background:var(--rice);
   padding:clamp(28px,3.6vw,48px);display:flex;flex-direction:column;
@@ -318,7 +311,8 @@ img{display:block}
 }
 @media (max-width:600px){
   .pillars,.grid-3,.why,.steps{grid-template-columns:1fr}
-  .head-in{height:60px}
+  .head-in{height:70px}
+  .mark img{height:46px}
   .btn{padding:10px 15px;font-size:11px}
   .track{animation-duration:20s}
   .track-sm{animation-duration:32s}
@@ -339,7 +333,11 @@ img{display:block}
 <!-- ============ HEADER ============ -->
 <header class="site-head">
   <div class="shell head-in">
-    <a href="#top" class="mark">Axom<i>yq</i></a>
+    <a href="#top" class="mark" aria-label="Axomyq — home">
+      <img src="logo.jpeg" alt="Axomyq"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span class="txt">Axom<i>yq</i></span>
+    </a>
     <nav class="nav" aria-label="Primary">
       <a href="#work">What we do</a>
       <a href="#services">Services</a>
@@ -363,7 +361,7 @@ img{display:block}
           <b>Duliajan, Assam</b><i>◆</i>
           <b>Websites &amp; business tools</b><i>◆</i>
           <b>AI-created content</b><i>◆</i>
-          <b>BillBook is live</b><i>◆</i>
+          <b>BillBook &amp; ContractZen are live</b><i>◆</i>
           <b>Assamese · Hindi · English</b><i>◆</i>
         </div>
         <div class="run-sm" aria-hidden="true">
@@ -371,7 +369,7 @@ img{display:block}
           <b>Duliajan, Assam</b><i>◆</i>
           <b>Websites &amp; business tools</b><i>◆</i>
           <b>AI-created content</b><i>◆</i>
-          <b>BillBook is live</b><i>◆</i>
+          <b>BillBook &amp; ContractZen are live</b><i>◆</i>
           <b>Assamese · Hindi · English</b><i>◆</i>
         </div>
       </div>
@@ -403,12 +401,6 @@ img{display:block}
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="shell hero-in">
-    <div class="logo-wrap" data-reveal>
-      <img src="logo.jpeg" alt="Axomyq"
-           onerror="this.style.display='none';document.getElementById('logoFallback').style.display='flex'">
-      <div class="logo-fallback" id="logoFallback" aria-hidden="true">A<i>q</i></div>
-    </div>
-
     <h1 class="wordmark" data-reveal>Axom<i>yq</i></h1>
     <p class="tagline" data-reveal>Intelligence from the East</p>
 
@@ -581,6 +573,9 @@ img{display:block}
       <p class="lede">
         Alongside client work we build our own tools for the everyday paperwork
         that is still being done by hand across the region.
+        Both are live and in active use — and we are still improving them. New
+        features are added regularly, and anything you ask for while using them
+        feeds straight into what we build next.
       </p>
     </div>
 
@@ -605,17 +600,22 @@ img{display:block}
         </div>
       </article>
 
-      <article class="prod">
-        <span class="kicker next"><span class="dot"></span> Coming soon</span>
+      <article class="prod live">
+        <span class="kicker now"><span class="dot"></span> Live now</span>
         <h3>ContractZen</h3>
-        <p class="sub">Contractor Business, Labour Compliance &amp; Billing Management</p>
+        <p class="sub">Labour Compliance &amp; Billing Management</p>
         <p>
-          One system for contractors — labour records, statutory compliance,
-          work orders and billing, kept together instead of spread across
-          registers and spreadsheets.
+          One system for site and project work — labour records, attendance,
+          statutory compliance, work orders and billing, kept together instead
+          of spread across registers and spreadsheets.
         </p>
+        <div class="offer">
+          <b>Free 30-day trial.</b>
+          Start with your own data and decide afterwards.
+        </div>
         <div class="prod-cta">
-          <a class="btn btn-line" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Join the early list</a>
+          <a class="btn btn-solid" href="https://contractzen.axomyq.in/" target="_blank" rel="noopener noreferrer">Open ContractZen ↗</a>
+          <a class="btn btn-line" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Ask for a walkthrough</a>
         </div>
       </article>
 
