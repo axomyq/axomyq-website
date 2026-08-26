@@ -8,7 +8,6 @@
 <meta name="theme-color" content="#F8F5F0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-<script>if (window.top !== window.self) { window.top.location = window.self.location; }</script>
 
 <meta property="og:title" content="Axomyq — Intelligence from the East">
 <meta property="og:description" content="Websites, business tools and AI-created content for businesses across North East India. Built in Duliajan, Assam.">
@@ -334,8 +333,7 @@ img{display:block}
 <header class="site-head">
   <div class="shell head-in">
     <a href="#top" class="mark" aria-label="Axomyq — home">
-      <img src="logo.jpeg" alt="Axomyq"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <img src="logo.jpeg" alt="Axomyq">
       <span class="txt">Axom<i>yq</i></span>
     </a>
     <nav class="nav" aria-label="Primary">
@@ -710,26 +708,7 @@ img{display:block}
   </div>
 </footer>
 
-<script>
-(function(){
-  var items = document.querySelectorAll('[data-reveal]');
-  if (!('IntersectionObserver' in window) ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    items.forEach(function(el){ el.classList.add('in'); });
-    return;
-  }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-
-  items.forEach(function(el, i){
-    el.style.transitionDelay = (Math.min(i, 4) * 70) + 'ms';
-    io.observe(el);
-  });
-})();
-</script>
+<script src="/main.js" defer></script>
 
 </body>
 </html>
