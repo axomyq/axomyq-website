@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://www.axomyq.in/services">
 <meta name="theme-color" content="#F8F5F0">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta property="og:title" content="Services — websites, business tools and AI-made content | Axomyq">
 <meta property="og:description" content="Websites, browser-based business tools, domain and email setup, and AI-created written and visual content in Assamese, Hindi and English.">
 <meta property="og:type" content="website">
@@ -22,49 +23,58 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-head">
+<header class="site-head" id="head">
   <div class="shell head-in">
-    <a href="/" class="mark" aria-label="Axomyq home"><img src="/logo.jpeg" alt="Axomyq" width="200" height="200"></a>
+    <a href="/" class="mark" aria-label="Axomyq home"><img src="/logo.jpeg" alt="Axomyq" width="240" height="240"></a>
     <nav class="nav" aria-label="Main"><a href="/">Home</a><a href="/apps">Apps</a><a href="/services" aria-current="page">Services</a><a href="/about">About</a><a href="/faq">FAQ</a><a href="/contact">Contact</a></nav>
     <a class="btn btn-ink head-cta" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">WhatsApp us</a>
-    <a class="head-wa" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp us"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3z"/><path d="M9 9.5c.3 2.5 2.7 4.9 5.2 5.2l1.3-1.3-1.8-.8-.9.9c-.9-.4-1.9-1.4-2.3-2.3l.9-.9-.8-1.8z"/></svg></a>
+    <button type="button" class="burger" id="burger" aria-controls="menu" aria-expanded="false" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </header>
+<nav class="menu" id="menu" aria-label="Mobile" hidden>
+  <a href="/">Home<small>Overview</small></a><a href="/apps">Apps<small>BillBook, ContractZen</small></a><a href="/services" aria-current="page">Services<small>Websites, tools, content</small></a><a href="/about">About<small>Who we are</small></a><a href="/faq">FAQ<small>Common questions</small></a><a href="/contact">Contact<small>Support and sales</small></a>
+  <div class="menu-cta">
+    <a class="btn btn-primary" href="https://app.axomyq.in" target="_blank" rel="noopener noreferrer">Open BillBook <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v6H5V6h6"/></svg></a>
+    <a class="btn btn-teal" href="https://contractzen.axomyq.in/" target="_blank" rel="noopener noreferrer">Open ContractZen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 13v6H5V6h6"/></svg></a>
+    <a class="btn btn-line" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">WhatsApp +91 98640 90125</a>
+  </div>
+  <div class="menu-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/delete-account">Delete account</a><a href="/status">Connection check</a></div>
+</nav>
 <main id="main">
-
 <section class="page-head"><div class="shell">
-  <span class="t-label">Services</span>
-  <h1 class="t-h1">What you can hire us for.</h1>
-  <p class="t-lede">Priced for regional businesses and scoped in writing before anything is built. If something below is not on the list, ask — we will say plainly whether we do it.</p>
+  <span class="eyebrow rise">Services</span>
+  <h1 class="title rise rise-2">What you can hire us for.</h1>
+  <p class="lede rise rise-3">Priced for regional businesses and scoped in writing before anything is built. If something is not on this list, ask — we will say plainly whether we do it.</p>
 </div></section>
 <section class="band"><div class="shell">
-  <div class="grid grid-3">
-    <div><span class="t-label">Web</span><h2 class="t-h3">Business websites</h2><p>Company sites, landing pages and catalogues that load quickly and read properly on a phone.</p></div>
-    <div><span class="t-label">Web</span><h2 class="t-h3">Browser-based tools</h2><p>Quotes, billing, records and simple reporting, moved off paper into something you open in a browser.</p></div>
-    <div><span class="t-label">Setup</span><h2 class="t-h3">Domain and email setup</h2><p>We buy the domain and hosting in your name, set up business email, and hand you the logins. You own it, not us.</p></div>
-    <div><span class="t-label">AI media</span><h2 class="t-h3">Written content</h2><p>Website copy, product descriptions, brochures and social posts in Assamese, Hindi and English.</p></div>
-    <div><span class="t-label">AI media</span><h2 class="t-h3">Images and graphics</h2><p>Posters, ads, product visuals and social creatives, generated to your brief and finished for print or screen.</p></div>
-    <div><span class="t-label">Design</span><h2 class="t-h3">Brand basics</h2><p>Logo, colours, type and print-ready files for signboards, cards and packaging — one consistent set.</p></div>
-  </div>
+  <div class="band-head reveal"><span class="eyebrow">Six things we do</span><h2 class="title">Web, media and the setup around them.</h2></div>
+  <div class="reveal"><div class="grid g3 stagger">
+  <div><span class="eyebrow">Web</span><h3 class="sub">Business websites</h3><p>Company sites, landing pages and catalogues that load quickly and read properly on a phone.</p></div>
+  <div><span class="eyebrow">Web</span><h3 class="sub">Browser-based tools</h3><p>Quotes, billing, records and simple reporting, moved off paper into something you open in a browser.</p></div>
+  <div><span class="eyebrow">Setup</span><h3 class="sub">Domain and email setup</h3><p>We buy the domain and hosting in your name, set up business email, and hand you the logins. You own it, not us.</p></div>
+  <div><span class="eyebrow">AI media</span><h3 class="sub">Written content</h3><p>Website copy, product descriptions, brochures and social posts in Assamese, Hindi and English.</p></div>
+  <div><span class="eyebrow">AI media</span><h3 class="sub">Images and graphics</h3><p>Posters, ads, product visuals and social creatives, generated to your brief and finished for print or screen.</p></div>
+  <div><span class="eyebrow">Design</span><h3 class="sub">Brand basics</h3><p>Logo, colours, type and print-ready files for signboards, cards and packaging — one consistent set.</p></div>
+</div></div>
 </div></section>
 <section class="band tint"><div class="shell">
-  <div class="band-head"><span class="t-label">How a project runs</span><h2 class="t-h2">Four steps, in this order.</h2>
-    <p class="t-lede">No discovery decks and no six-week proposals. The sequence is short so you see something working early.</p></div>
-  <div class="grid grid-4">
-    <div><div class="step-n">1</div><h3 class="t-h3">Listen</h3><p>We sit with the people doing the work and watch how it is handled today.</p></div>
-    <div><div class="step-n">2</div><h3 class="t-h3">Scope</h3><p>A written plan with a fixed price and dates, agreed before anything is built.</p></div>
-    <div><div class="step-n">3</div><h3 class="t-h3">Build</h3><p>Short cycles, each ending with something you can open and try yourself.</p></div>
-    <div><div class="step-n">4</div><h3 class="t-h3">Look after</h3><p>Training, fixes and changes as the business shifts. We stay reachable.</p></div>
+  <div class="band-head reveal"><span class="eyebrow">How a project runs</span><h2 class="title">Four steps, in this order.</h2>
+    <p class="lede">No discovery decks and no six-week proposals. The sequence is short so you see something working early.</p></div>
+  <div class="reveal"><div class="grid g4 stagger">
+    <div><div class="step-n">1</div><h3 class="sub">Listen</h3><p>We sit with the people doing the work and watch how it is handled today.</p></div>
+    <div><div class="step-n">2</div><h3 class="sub">Scope</h3><p>A written plan with a fixed price and dates, agreed before anything is built.</p></div>
+    <div><div class="step-n">3</div><h3 class="sub">Build</h3><p>Short cycles, each ending with something you can open and try yourself.</p></div>
+    <div><div class="step-n">4</div><h3 class="sub">Look after</h3><p>Training, fixes and changes as the business shifts. We stay reachable.</p></div>
   </div>
-  <div class="btn-row"><a class="btn btn-primary" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Discuss a project on WhatsApp</a></div>
+  <div class="btn-row"><a class="btn btn-primary" href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">Discuss a project on WhatsApp</a></div></div>
 </div></section>
 </main>
 <footer class="site-foot">
   <div class="shell">
     <div class="foot-in">
       <div class="foot-brand">
-        <a href="/" class="word">Axom<span class="brand-y">yq</span></a>
-        <p>Software and AI-made content for businesses across North East India. Built in Duliajan, Assam.</p>
+        <img src="/logo.jpeg" alt="Axomyq" width="240" height="240">
+        <p>Business software and AI-made content for firms across North East India. Built in Duliajan, Assam.</p>
       </div>
       <div class="foot-col"><h2 class="foot-h">Products</h2>
         <a href="/apps#billbook">BillBook</a><a href="/apps#contractzen">ContractZen</a><a href="/apps#mobile">Mobile apps</a></div>
@@ -73,20 +83,9 @@
       <div class="foot-col"><h2 class="foot-h">Legal</h2>
         <a href="/privacy">Privacy policy</a><a href="/terms">Terms of use</a><a href="/delete-account">Delete your account</a></div>
     </div>
-    <div class="legal"><span>© 2026 Axomyq LLP · Duliajan, Assam, India</span><span><a href="/status" class="t-small">Connection check</a></span></div>
+    <div class="legal"><span>© 2026 Axomyq LLP · Duliajan, Assam, India</span><span><a href="/status">Connection check</a></span></div>
   </div>
 </footer>
-<nav class="tabbar" aria-label="Quick navigation"><a href="/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a><a href="/apps"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg><span>Apps</span></a><a href="/faq"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/></svg><span>Help</span></a><button type="button" class="tab-menu" aria-controls="sheet" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button></nav>
-<div class="sheet-backdrop" hidden></div>
-<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu" hidden>
-  <div class="sheet-grip"></div>
-  <a href="/services">Services<small>Websites, tools, AI content</small></a>
-  <a href="/about">About Axomyq<small>Who we are, company details</small></a>
-  <a href="/contact">Contact &amp; support<small>Email, WhatsApp, office hours</small></a>
-  <a href="https://wa.me/919864090125" target="_blank" rel="noopener noreferrer">WhatsApp +91 98640 90125<small>Fastest way to reach us</small></a>
-  <div class="sheet-legal"><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/delete-account">Delete account</a><a href="/status">Connection check</a></div>
-  <button type="button" class="sheet-close">Close</button>
-</div>
 <script src="/main.js" defer></script>
 </body>
 </html>

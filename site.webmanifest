@@ -1,9 +1,1 @@
-{
-  "name": "Axomyq",
-  "short_name": "Axomyq",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#F8F5F0",
-  "theme_color": "#F8F5F0",
-  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }]
-}
+{"name":"Axomyq","short_name":"Axomyq","start_url":"/","display":"standalone","background_color":"#F8F5F0","theme_color":"#F8F5F0","icons":[{"src":"/favicon.svg","sizes":"any","type":"image/svg+xml"}]}
