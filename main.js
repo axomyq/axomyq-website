@@ -29,6 +29,25 @@
     if (el && el.tagName === 'DETAILS') el.open = true;
   }
 
-  function init() { wireLogo(); markCurrent(); openHashDetails(); }
+  /* Menu sheet (mobile tab bar) */
+  function wireSheet() {
+    var btn = document.querySelector('.tab-menu');
+    var sheet = document.getElementById('sheet');
+    var back = document.querySelector('.sheet-backdrop');
+    if (!btn || !sheet || !back) return;
+    var close = document.querySelector('.sheet-close');
+    function setOpen(open) {
+      sheet.hidden = !open; back.hidden = !open;
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) sheet.querySelector('a').focus(); else btn.focus();
+    }
+    btn.addEventListener('click', function () { setOpen(sheet.hidden); });
+    back.addEventListener('click', function () { setOpen(false); });
+    if (close) close.addEventListener('click', function () { setOpen(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) setOpen(false); });
+  }
+
+  function init() { wireLogo(); markCurrent(); openHashDetails(); wireSheet(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
