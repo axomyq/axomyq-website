@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /status
+Sitemap: https://www.axomyq.in/sitemap.xml
