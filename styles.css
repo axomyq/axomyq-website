@@ -125,16 +125,14 @@ h3.sub{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-hei
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background-image:repeating-linear-gradient(90deg,transparent 0 31px,rgba(26,107,92,.07) 31px 32px);
   -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent 72%);mask-image:linear-gradient(180deg,rgba(0,0,0,.75),transparent 72%)}
-.hero-in{position:relative;z-index:1;display:grid;gap:36px;grid-template-columns:1fr;align-items:center}
-@media (min-width:940px){.hero-in{grid-template-columns:1.02fr .98fr;gap:56px}}
+.hero .shell{position:relative;z-index:1}
+.hero-copy{max-width:760px}
+.hero-apps{margin-top:40px}
+@media (min-width:700px){.hero-apps{margin-top:52px}}
 .hero .lede{margin-top:18px}
 .trust{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;font-size:13.5px;color:var(--clay)}
 .trust span{display:inline-flex;align-items:center;gap:8px}
 .trust i{width:8px;height:8px;transform:rotate(45deg);background:var(--muga);flex:none}
-.hero-art{width:100%;height:auto;filter:drop-shadow(0 22px 44px rgba(20,16,13,.14))}
-.float-a{animation:floaty 7s ease-in-out infinite}
-.float-b{animation:floaty 9s ease-in-out infinite reverse}
-@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
 /* load-in stagger */
 .rise{animation:rise .65s cubic-bezier(.22,.7,.3,1) both}
@@ -142,14 +140,14 @@ h3.sub{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-hei
 @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
 /* scroll reveal */
-.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
-.reveal.in{opacity:1;transform:none}
-.reveal.in .stagger > *{animation:rise .6s cubic-bezier(.22,.7,.3,1) both}
-.reveal.in .stagger > *:nth-child(2){animation-delay:.09s}
-.reveal.in .stagger > *:nth-child(3){animation-delay:.18s}
-.reveal.in .stagger > *:nth-child(4){animation-delay:.27s}
-.reveal.in .stagger > *:nth-child(5){animation-delay:.36s}
-.reveal.in .stagger > *:nth-child(6){animation-delay:.45s}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.7,.3,1)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.in .stagger > *{animation:rise .6s cubic-bezier(.22,.7,.3,1) both}
+.js .reveal.in .stagger > *:nth-child(2){animation-delay:.09s}
+.js .reveal.in .stagger > *:nth-child(3){animation-delay:.18s}
+.js .reveal.in .stagger > *:nth-child(4){animation-delay:.27s}
+.js .reveal.in .stagger > *:nth-child(5){animation-delay:.36s}
+.js .reveal.in .stagger > *:nth-child(6){animation-delay:.45s}
 
 /* ---------- app cards ---------- */
 .apps{display:grid;gap:16px;grid-template-columns:1fr}
@@ -263,14 +261,14 @@ h3.sub{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-hei
 
 /* ---------- fallbacks & preferences ---------- */
 @supports not (display:grid){
-  .hero-in,.apps,.grid,.why,.contact,.foot-in{display:block}
+  .apps,.grid,.why,.contact,.foot-in{display:block}
   .apps > *,.grid > *,.why > *{margin-bottom:16px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .rise,.float-a,.float-b,.dot,.menu{animation:none}
-  .reveal{opacity:1;transform:none;transition:none}
-  .reveal.in .stagger > *{animation:none}
+  .rise,.dot,.menu{animation:none}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .js .reveal.in .stagger > *{animation:none}
   .btn,.app,.chan,.nav a::after,.faq summary::after{transition:none}
   .btn:hover,.app:hover{transform:none}
 }
